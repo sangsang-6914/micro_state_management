@@ -1,8 +1,11 @@
-import { useAtom } from 'jotai';
+import { PrimitiveAtom, useAtom } from 'jotai';
 import React from 'react';
-import { countAtom } from '../atoms/count';
 
-function Counter3() {
+interface Props {
+  countAtom: PrimitiveAtom<number>;
+}
+
+function Counter3({ countAtom }: Props) {
   const [count, setCount] = useAtom(countAtom);
   return (
     <div>
