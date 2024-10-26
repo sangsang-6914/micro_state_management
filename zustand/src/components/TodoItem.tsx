@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import useTodoStore, { Todo } from '../hooks/useTodoStore';
 
 function TodoItem({ todo }: { todo: Todo }) {
+  console.log('TodoItem Renrender');
   const removeTodo = useTodoStore((state) => state.removeTodo);
   const toggleTodo = useTodoStore((state) => state.toggleTodo);
   return (
@@ -19,4 +20,4 @@ function TodoItem({ todo }: { todo: Todo }) {
   );
 }
 
-export default TodoItem;
+export default memo(TodoItem);
