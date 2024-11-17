@@ -1,8 +1,9 @@
-import { useTracked } from '../context/StateContext';
+import { useTrackedState, useUpdate } from '../context/StateContext';
 
 function Counter() {
-  const [state, setState] = useTracked();
-  console.log('Counter1 Rerender');
+  const { count } = useTrackedState();
+  const setState = useUpdate();
+  console.log('Counter Rerendering');
   const inc = () => {
     setState((prev) => ({
       ...prev,
@@ -11,7 +12,7 @@ function Counter() {
   };
   return (
     <div>
-      {state.count}
+      {count}
       <button onClick={inc}>+</button>
     </div>
   );

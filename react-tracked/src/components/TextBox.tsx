@@ -1,8 +1,13 @@
-import { useTracked } from '../context/StateContext';
+import {
+  useTracked,
+  useTrackedState,
+  useUpdate,
+} from '../context/StateContext';
 
 function TextBox() {
-  const [state, setState] = useTracked();
-  console.log('Text Box Rerender');
+  const { text } = useTrackedState();
+  const setState = useUpdate();
+  console.log('TextBox Rendering');
   const setText = (text: string) => {
     setState((prev) => ({ ...prev, text }));
   };
@@ -10,7 +15,7 @@ function TextBox() {
     <div>
       <input
         type="text"
-        value={state.text}
+        value={text}
         onChange={(e) => setText(e.target.value)}
       />
     </div>
