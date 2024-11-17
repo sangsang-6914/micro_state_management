@@ -1,11 +1,15 @@
 import Counter from './components/Counter';
-import { StateProvider } from './context/StateContext';
+import TextBox from './components/TextBox';
+import { Provider } from './context/StateContext';
 
 function App() {
   return (
-    <StateProvider>
+    <Provider>
       <Counter />
-    </StateProvider>
+      <Counter />
+      <TextBox />
+      <TextBox />
+    </Provider>
   );
 }
 

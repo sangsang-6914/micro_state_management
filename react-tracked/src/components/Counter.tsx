@@ -1,8 +1,8 @@
-import React from 'react';
-import { useStateContext } from '../context/StateContext';
+import { useTracked } from '../context/StateContext';
 
 function Counter() {
-  const [state, setState] = useStateContext();
+  const [state, setState] = useTracked();
+  console.log('Counter1 Rerender');
   const inc = () => {
     setState((prev) => ({
       ...prev,
