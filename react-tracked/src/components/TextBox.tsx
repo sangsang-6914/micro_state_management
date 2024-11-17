@@ -1,8 +1,4 @@
-import {
-  useTracked,
-  useTrackedState,
-  useUpdate,
-} from '../context/StateContext';
+import { useTrackedState, useUpdate } from '../context/StateContext';
 
 function TextBox() {
   const { text } = useTrackedState();

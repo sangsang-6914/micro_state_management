@@ -1,14 +1,15 @@
-import Counter2 from './components/Counter2';
-import TextBox2 from './components/TextBox2';
-import { Provider } from './context/StateContext2';
+import { Provider } from 'react-redux';
+import { store } from './context/StateContext3';
+import Counter3 from './components/Counter3';
+import TextBox3 from './components/TextBox3';
 
 function App() {
   return (
-    <Provider>
-      <Counter2 />
-      <Counter2 />
-      <TextBox2 />
-      <TextBox2 />
+    <Provider store={store}>
+      <Counter3 />
+      <Counter3 />
+      <TextBox3 />
+      <TextBox3 />
     </Provider>
   );
 }
